@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaFacebookF, FaPhone, FaTiktok, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookF, FaTiktok, FaWhatsapp } from "react-icons/fa6";
 
 import menuItems, { whatsappNumber } from "@/data/menu";
 
@@ -54,7 +54,6 @@ const reviews: Review[] = [
   },
 ];
 
-const whatsappDisplay = "+60 10-123 4567";
 const heroProduct = menuItems[3] ?? menuItems[0];
 
 function buildWhatsAppLink(productName: string) {
