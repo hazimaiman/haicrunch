@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   title: "HaiCrunch | Homemade Cookies & Cakes",
   description:
     "Fresh homemade cookies, cakes, and snack jars from Kelantan. Baked with love and delivered via WhatsApp or COD.",
+  icons: {
+    icon: [
+      { url: "/logo/logo_hc.jpg", type: "image/jpeg" },
+      { url: "/logo/logo_hc.jpg", rel: "shortcut icon", type: "image/jpeg" },
+    ],
+  },
 };
 
 export default function RootLayout({
