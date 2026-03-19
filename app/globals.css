@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f0ff;
-  --foreground: #1f1434;
+  --background: #f8f1e6;
+  --foreground: #132319;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-lora);
+  --font-mono: var(--font-lora);
 }
 
 html {
@@ -17,13 +17,77 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at 20% 20%, #f1e6ff 0, transparent 35%),
-    radial-gradient(circle at 80% 10%, #f5e6d7 0, transparent 30%),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-lora), "Times New Roman", serif;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }
 
 a {
   color: inherit;
+}
+
+.btn-magnolia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 2.25rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.btn-magnolia:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.96);
+}
+
+.btn-magnolia-lilac {
+  background: #e7d4ef;
+  color: #36284d;
+}
+
+.btn-magnolia-dark {
+  background: #083d32;
+  color: #f6f2e8;
+}
+
+.btn-magnolia-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.32);
+}
+
+.ticker-track {
+  display: inline-block;
+  min-width: max-content;
+  padding-left: 100%;
+  animation: ticker-slide 24s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  margin-right: 3.5rem;
+}
+
+@keyframes ticker-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
