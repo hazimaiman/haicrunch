@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa6";
 
@@ -40,7 +40,7 @@ function getAllFlavors(items: Product[]) {
   return Array.from(new Set(items.map((item) => item.flavor))).sort((a, b) => a.localeCompare(b));
 }
 
-export default function MenuPage() {
+function MenuPageContent() {
   const searchParams = useSearchParams();
   const initialType = filterType(searchParams.get("type"));
 
@@ -248,5 +248,13 @@ export default function MenuPage() {
         </section>
       </main>
     </div>
+  );
+}
+
+export default function MenuPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#f9f5ed]" />}>
+      <MenuPageContent />
+    </Suspense>
   );
 }
