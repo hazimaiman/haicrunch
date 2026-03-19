@@ -7,7 +7,13 @@ import { useEffect, useRef, useState } from "react";
 
 import menuItems, { categoryInfo, type ProductCategory } from "@/data/menu";
 
-const categoryOrder: ProductCategory[] = ["cookies", "chocobar", "tart", "cake", "brownies"];
+const categoryOrder: ProductCategory[] = [
+  "cookies",
+  "chocobar",
+  "tart",
+  "cake",
+  "brownies",
+];
 const categoryDisplay: Record<ProductCategory, string> = {
   cookies: "Cookies",
   chocobar: "Choco Series",
@@ -26,7 +32,7 @@ export default function ProductsSection() {
     cookies: "/menu/4.jpg",
     chocobar: "/menu/3.jpg",
     tart: "/menu/1.jpg",
-    cake: "/menu/12.jpg",
+    cake: "/menu/12.JPG",
     brownies: "/menu/13.JPG",
   };
 
@@ -81,7 +87,9 @@ export default function ProductsSection() {
 
       cardRefs.current.forEach((card, index) => {
         if (!card) return;
-        const distance = Math.abs(card.offsetLeft - scroller.offsetLeft - scrollLeft);
+        const distance = Math.abs(
+          card.offsetLeft - scroller.offsetLeft - scrollLeft,
+        );
         if (distance < nearestDistance) {
           nearestDistance = distance;
           nearestIndex = index;
@@ -96,16 +104,15 @@ export default function ProductsSection() {
   }, [isDesktop]);
 
   return (
-    <section
-      id="products"
-      className="w-full bg-[#f5f2ea] py-14 sm:py-16"
-    >
+    <section id="products" className="w-full bg-[#f5f2ea] py-14 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#8b6e4f]">
             Signature Product
           </p>
-          <h2 className="mt-2 text-4xl font-semibold text-[#1f3a31] sm:text-6xl">Our Products</h2>
+          <h2 className="mt-2 text-4xl font-semibold text-[#1f3a31] sm:text-6xl">
+            Our Products
+          </h2>
           <p className="mt-3 text-sm leading-relaxed text-[#5c4432] sm:text-base">
             Browse all categories and open full menu to view every item.
           </p>
@@ -177,7 +184,9 @@ export default function ProductsSection() {
                   onClick={() => scrollToIndex(index)}
                   aria-label={`Go to product card ${index + 1}`}
                   className={`h-2.5 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? "w-6 bg-[#6f4d38]" : "w-2.5 bg-[#d8c0a5]"
+                    index === activeIndex
+                      ? "w-6 bg-[#6f4d38]"
+                      : "w-2.5 bg-[#d8c0a5]"
                   }`}
                 />
               ))}
