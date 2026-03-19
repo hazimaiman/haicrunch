@@ -26,7 +26,7 @@ export default function ProductsSection() {
     cookies: "/menu/4.jpg",
     chocobar: "/menu/3.jpg",
     tart: "/menu/1.jpg",
-    cake: "/menu/12.jpg",
+    cake: "/menu/12.JPG",
     brownies: "/menu/13.JPG",
   };
 
